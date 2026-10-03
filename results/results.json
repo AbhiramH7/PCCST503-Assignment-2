@@ -1,0 +1,395 @@
+{
+ "E1_compat": {
+  "CreateOrder \u2192 MakePayment": [
+   "1.98",
+   "-0.19",
+   "0.28",
+   "**yes**"
+  ],
+  "CreateOrder \u2192 CancelCart": [
+   "-0.04",
+   "1.06",
+   "-0.01",
+   "no"
+  ],
+  "CreateOrder \u2192 SendNotification": [
+   "-0.04",
+   "0.03",
+   "-0.02",
+   "no"
+  ]
+ },
+ "E1_state_awareness": [
+  [
+   "CreateOrder",
+   "0 unmet / 0 violated \u2192 applicable",
+   "0 unmet / 0 violated \u2192 applicable"
+  ],
+  [
+   "MakePayment",
+   "2 unmet / 1 violated \u2192 blocked",
+   "0 unmet / 0 violated \u2192 applicable"
+  ],
+  [
+   "CancelCart",
+   "0 unmet / 0 violated \u2192 applicable",
+   "1 unmet / 1 violated \u2192 blocked"
+  ],
+  [
+   "SendNotification",
+   "1 unmet / 1 violated \u2192 blocked",
+   "1 unmet / 1 violated \u2192 blocked"
+  ]
+ ],
+ "E1_sim_vs_compat": [
+  [
+   "CreateOrder \u2192 CreateOrder_DB",
+   "0.886",
+   "1.000",
+   "0.951",
+   "-0.16/0.04",
+   "no"
+  ],
+  [
+   "CreateOrder \u2192 CreateOrder_GUI",
+   "0.876",
+   "1.000",
+   "0.902",
+   "-0.19/0.02",
+   "no"
+  ],
+  [
+   "CreateOrder \u2192 CancelOrder",
+   "0.367",
+   "0.313",
+   "0.375",
+   "1.12/-0.15",
+   "yes"
+  ],
+  [
+   "CreateOrder \u2192 MakePayment",
+   "0.124",
+   "-0.001",
+   "0.384",
+   "1.98/-0.19",
+   "yes"
+  ],
+  [
+   "MakePayment \u2192 SendNotification",
+   "0.022",
+   "0.001",
+   "0.156",
+   "0.96/0.09",
+   "yes"
+  ],
+  [
+   "CreateOrder \u2192 ArchiveLogs",
+   "0.038",
+   "0.033",
+   "-0.002",
+   "-0.02/0.08",
+   "no"
+  ]
+ ],
+ "compat_f1": {
+  "ecommerce": {
+   "ours": 1.0,
+   "baseline": 0.4504541928964585
+  },
+  "travel": {
+   "ours": 1.0,
+   "baseline": 0.44009871492456637
+  },
+  "pipeline": {
+   "ours": 1.0,
+   "baseline": 0.500488612836439
+  }
+ },
+ "E2_cos": [
+  [
+   "CreateOrder",
+   "0.731",
+   "0.700",
+   "0.798"
+  ],
+  [
+   "MakePayment",
+   "0.628",
+   "0.618",
+   "0.574"
+  ],
+  [
+   "SendNotification",
+   "0.356",
+   "0.351",
+   "0.320"
+  ],
+  [
+   "ArchiveLogs (unrelated control)",
+   "0.016",
+   "0.015",
+   "0.004"
+  ]
+ ],
+ "compose": {
+  "ecommerce": {
+   "n_chains": 139.0,
+   "req_f1": 1.0,
+   "prov_f1": 1.0,
+   "exact": 1.0,
+   "assoc": 1.0,
+   "order_recovery": 1.0,
+   "reject": 1.0,
+   "naive_req_f1": 0.9140083217753123,
+   "naive_req_precision": 0.8416347381864624
+  },
+  "travel": {
+   "n_chains": 43.0,
+   "req_f1": 1.0,
+   "prov_f1": 1.0,
+   "exact": 1.0,
+   "assoc": 1.0,
+   "order_recovery": 1.0,
+   "reject": 1.0,
+   "naive_req_f1": 0.8183962264150944,
+   "naive_req_precision": 0.6926147704590819
+  },
+  "pipeline": {
+   "n_chains": 42.0,
+   "req_f1": 1.0,
+   "prov_f1": 1.0,
+   "exact": 1.0,
+   "assoc": 1.0,
+   "order_recovery": 1.0,
+   "reject": 1.0,
+   "naive_req_f1": 0.7176470588235294,
+   "naive_req_precision": 0.5596330275229358
+  }
+ },
+ "E3_wtype": {
+  "0.0": [
+   0.9691089909875523,
+   0.9999999999999998,
+   0.04741002704065772
+  ],
+  "0.1": [
+   0.9609447292792764,
+   0.9913289138916944,
+   0.04831796810052016
+  ],
+  "0.35": [
+   0.8772945068584169,
+   0.9024858185197127,
+   0.05762064289419258
+  ],
+  "0.7": [
+   0.6794184634766592,
+   0.6923259446397837,
+   0.07962628050956942
+  ],
+  "1.4": [
+   0.34099495002935426,
+   0.33289363697597985,
+   0.11726209063680267
+  ]
+ },
+ "E4_ecommerce": [
+  [
+   "SendNotification",
+   "0.312",
+   "0.565",
+   "relevant"
+  ],
+  [
+   "CreateOrder",
+   "0.299",
+   "0.281",
+   "relevant"
+  ],
+  [
+   "CreateOrder_DB",
+   "0.299",
+   "0.281",
+   "relevant"
+  ],
+  [
+   "CreateOrder_GUI",
+   "0.299",
+   "0.281",
+   "relevant"
+  ],
+  [
+   "MakePayment",
+   "0.297",
+   "0.348",
+   "relevant"
+  ],
+  [
+   "CancelCart",
+   "0.019",
+   "0.004",
+   "irrelevant/harmful"
+  ],
+  [
+   "GenerateSalesReport",
+   "0.007",
+   "0.008",
+   "irrelevant/harmful"
+  ],
+  [
+   "ApplyDiscount",
+   "0.003",
+   "-0.021",
+   "irrelevant/harmful"
+  ],
+  [
+   "UpdateProfilePhoto",
+   "0.001",
+   "-0.013",
+   "irrelevant/harmful"
+  ],
+  [
+   "CancelOrder",
+   "0.000",
+   "0.209",
+   "irrelevant/harmful"
+  ],
+  [
+   "AuthenticateUser",
+   "0.000",
+   "0.013",
+   "irrelevant/harmful"
+  ],
+  [
+   "ArchiveLogs",
+   "0.000",
+   "0.009",
+   "irrelevant/harmful"
+  ]
+ ],
+ "relevance_auc": {
+  "ecommerce": {
+   "ours": 1.0,
+   "cos_goal": 1.0,
+   "bag_cos": 0.9142857142857143
+  },
+  "travel": {
+   "ours": 1.0,
+   "cos_goal": 0.6642857142857143,
+   "bag_cos": 0.632142857142857
+  },
+  "pipeline": {
+   "ours": 1.0,
+   "cos_goal": 0.7333333333333334,
+   "bag_cos": 0.725
+  }
+ },
+ "E5_scenarios": [
+  [
+   "baseline (declared costs, always available)",
+   "CreateOrder (0.90) > CreateOrder_DB (0.87) > CreateOrder_GUI (0.69)"
+  ],
+  [
+   "risk-averse weighting (risk weight 2.0)",
+   "CreateOrder (0.82) > CreateOrder_GUI (0.71) > CreateOrder_DB (0.55)"
+  ],
+  [
+   "reliability: DB variant drops 0.95 \u2192 0.60",
+   "CreateOrder (0.90) > CreateOrder_GUI (0.69) > CreateOrder_DB (0.55)"
+  ],
+  [
+   "availability: API only open 06\u201322h, t = 03h",
+   "CreateOrder_DB (0.87) > CreateOrder_GUI (0.69) > CreateOrder (0.00)"
+  ],
+  [
+   "availability: same window, t = 12h",
+   "CreateOrder (0.90) > CreateOrder_DB (0.87) > CreateOrder_GUI (0.69)"
+  ],
+  [
+   "resource: Database unavailable",
+   "CreateOrder_GUI (0.69) > CreateOrder_DB (0.00) > CreateOrder (0.00)"
+  ],
+  [
+   "resource: Browser unavailable",
+   "CreateOrder (0.90) > CreateOrder_DB (0.87) > CreateOrder_GUI (0.00)"
+  ]
+ ],
+ "E5_ablation": {
+  "0.0": 1.0,
+  "0.5": 1.0,
+  "1.0": 1.0,
+  "2.0": 1.0,
+  "4.0": 0.3333333333333333
+ },
+ "dim_sweep": {
+  "16": [
+   0.4821919689505896,
+   0.36873992182596455,
+   0.753373015873016,
+   0.5415151515151514,
+   0.6137373737373737
+  ],
+  "32": [
+   0.6279388737610794,
+   0.9824490504838809,
+   0.8989682539682541,
+   0.7328282828282828,
+   0.6542424242424242
+  ],
+  "64": [
+   0.7818516898781179,
+   1.0,
+   0.9492063492063493,
+   1.0,
+   0.7776767676767677
+  ],
+  "128": [
+   0.9076467680833145,
+   1.0,
+   0.9976190476190475,
+   1.0,
+   0.8624242424242425
+  ],
+  "256": [
+   0.9557936507936508,
+   1.0,
+   0.9666666666666667,
+   1.0,
+   0.93
+  ],
+  "512": [
+   0.991304347826087,
+   1.0,
+   1.0,
+   1.0,
+   0.958888888888889
+  ],
+  "1024": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   0.9944444444444444
+  ],
+  "2048": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "4096": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ]
+ },
+ "efficiency": {
+  "encode_us": 195.4808958335737,
+  "compose_ms": 0.42611229999920397,
+  "compat_us": 5.125931500003844,
+  "floats_per_cap": 8832
+ }
+}
